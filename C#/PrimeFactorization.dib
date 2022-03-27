@@ -1,0 +1,31 @@
+#!csharp
+
+List<ulong> primes=new();
+primes.Add(2);
+
+bool isPrime(ulong num){
+    foreach(var p in primes){
+        if(num%p==0)return false;
+    }
+    return true;
+}
+
+List<ulong> PrimeFinder(ulong num){
+    List<ulong> result=new();
+    var numsqr=num/2.0+1;
+    if((num%2==0))result.Add(2);
+    for(ulong i=3; i<numsqr;i++){
+        if(isPrime(i)){
+            primes.Add(i);
+            if(num%i==0)
+                result.Add(i);
+        }
+    }
+    return result;
+}
+PrimeFinder(660*13*23)
+
+#!csharp
+
+var a=Console.ReadLine();
+Console.WriteLine(a);
