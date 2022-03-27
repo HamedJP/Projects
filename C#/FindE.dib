@@ -1,0 +1,33 @@
+#!csharp
+
+bool check(double prev, double pi ,  int n){
+   if((uint)(Math.Pow(10,n)*prev)==(uint)(Math.Pow(10,n)*pi)) return true;
+   return false;
+}
+
+#!csharp
+
+long fact(long a){
+    if (a<=1) return 1;
+    return a*fact(a-1);
+}
+fact(4)
+
+#!csharp
+
+double E(int n){
+    double prev=0;
+    double e=1;
+    long stp=1;
+    while(!check(prev,e,n)){
+        prev=e;
+        e+=1.0/fact(stp);
+        stp++;
+    }
+   return (double)((long)(Math.Pow(10,n)*e)/Math.Pow(10,n));
+}
+E(15)
+
+#!csharp
+
+Math.E
